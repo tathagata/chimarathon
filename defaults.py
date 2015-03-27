@@ -1,0 +1,28 @@
+templateVars = {
+    'year':'2015',
+#    'baml_logo':'http://www.ashanet.org/chicago/events/2015/marathon/index/assets/boa_chimar_h_rgb_1.jpg',
+    'baml_logo':'https://scontent-ord.xx.fbcdn.net/hphotos-xpa1/t31.0-8/1495181_10152923331531645_4198555104746370160_o.jpg',
+    'baml_marathon_head_line':'Bank of America Chicago Marathon',
+    'baml_marathon_blurb':'The Bank of America Chicago Marathon is the pinnacle of achievement for elite athletes and everyday runners alike. ',
+    #'asha_for_education_logo':'http://www.ashanet.org/chicago/events/2015/marathon/index/assets/ta2logo_800_1.gif',
+    'asha_for_education_logo':'http://www.ashanet.org/uflorida/old/TeamAshaUF0.jpg',
+    'asha_for_education':'',
+    'asha_for_education_blurb':'Asha for Education is a secular organization dedicated to change in India by focusing on basic education in the belief that education is a critical requisite for socio-economic change.',
+    'sample_logo':'',
+    'sample_headline':'',
+    'sample_blurb':'',
+    'fundraiser_1':'Neena Majumdar',
+    'fundraiser_1_url':'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/11024618_10155383710950151_4128021590162707514_n.jpg?oh=2cc76860ac8588487670f105081f7baa&oe=557D8F50&__gda__=1438108207_47914a9351770179a26a18d63f028215',
+    'fundraiser_1_amount':'300,000 USD',
+    'fundraiser_2':'Chandan Majumdar',
+    'fundraiser_2_url':'https://scontent-ord.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10432487_10155384154160151_1710816796206307801_n.jpg?oh=c8627cfe5f82200262021fea496b4fc5&oe=55A8DBF4',
+    'fundraiser_2_amount':'280,000 USD',
+    'fundraiser_3':'Neena 2',
+    'fundraiser_3_url':'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/11024618_10155383710950151_4128021590162707514_n.jpg\
+?oh=2cc76860ac8588487670f105081f7baa&oe=557D8F50&__gda__=1438108207_47914a9351770179a26a18d63f028215',
+    'fundraiser_3_amount':'30,000 USD',
+    'fundraiser_4':'Barak',
+    'fundraiser_4_url':'https://scontent-ord.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10432487_10155384154160151_1710816796206307801_n.jpg?oh=c862\
+7cfe5f82200262021fea496b4fc5&oe=55A8DBF4',
+    'fundraiser_4_amount': '25,000 USD',
+    }
