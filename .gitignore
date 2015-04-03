@@ -2,3 +2,4 @@ bootstrap-3.3.4
 venv/*
 *.pyc
 .DS_Store
+data/.
