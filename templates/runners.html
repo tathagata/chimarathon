@@ -38,6 +38,16 @@
                 </tr>
               </thead>
               <tbody>
+              {% for name, url in runners_data_list %}
+                  <tr>
+                      <td><a href="#"><img src="{{ fundraiser_3_url }}" height=35 width=35/></a></td>
+                      <td><a href="{{ url }}">{{ name }}</a></td>
+                      <td>300,000</td>
+                      <td>30</td>
+                      <td>10</td>
+                  </tr>
+              {% endfor %}
+              <!--
                 <tr>
                   <td><a href="#"><img src="{{fundraiser_3_url}}" height=35 width=35 /></a></td>
                   <td><a href="#">Neena Majumdar</a></td>
@@ -52,20 +62,21 @@
                   <td>30</td>
                   <td>10</td>
                 </tr>
-		<tr>
+		        <tr>
                   <td><a href="#"><img src="{{fundraiser_3_url}}" height=35 width=35 /></a></td>
                   <td><a href="#">Neena Majumdar</a></td>
                   <td>300,000</td>
                   <td>30</td>
                   <td>10</td>
                 </tr>
-		<tr>
+		        <tr>
                   <td><a href="#"><img src="{{fundraiser_3_url}}" height=35 width=35 /></a></td>
                   <td><a href="#">Neena Majumdar</a></td>
                   <td>300,000</td>
                   <td>30</td>
                   <td>10</td>
                 </tr>
+                -->
               </tbody>
             </table>
           </div>
