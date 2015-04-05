@@ -1,11 +1,11 @@
 import csv
 
 import jinja2
-from defaults import templateVars
+from app.defaults import templateVars
 import os
 
 
-templateLoader = jinja2.FileSystemLoader(searchpath="templates")
+templateLoader = jinja2.FileSystemLoader(os.path.dirname(os.path.dirname(__file__))+"/templates")
 templateEnv = jinja2.Environment(loader=templateLoader)
 static_output_loc = 'static'
 
@@ -27,6 +27,7 @@ def render_static_files(**profile_data):
 
 def render_index_file(runners_data_list):
     index = templateEnv.get_template("index.html")
+
     outputText = index.render(runners_data_list=runners_data_list,
                               **templateVars)
     write_static_file("static/index.html", outputText)
@@ -42,19 +43,24 @@ def write_static_file(filename, outputText):
 
 def load_data(filename):
     csv_file = open(filename, 'rb')
-    return filter(lambda x: x['First Name'] is not None,
-                  [row for row in csv.DictReader(csv_file, delimiter=",", quotechar='|')])
+    return filter(lambda x: x['First Name'] is not None and x['Channelid'] is not None and len(x['Channelid'])>0,
+                  [row for row in csv.DictReader(csv_file, delimiter=",", quotechar='|') if row is not None])
+
+
 
 def csv_to_jinja(filename):
     all_profile_data=load_data(filename)
 
-    runners_data_list = [('%s %s' % (profile_data['First Name'], profile_data['Last Name']),
+    if all_profile_data is not None:
+        runners_data_list = [('%s %s' % (profile_data['First Name'], profile_data['Last Name']),
                           'users/%s%s/profile.html' % (profile_data['First Name'], profile_data['Last Name']))
-                         for profile_data in all_profile_data]
-    render_index_file(runners_data_list)
 
-    for profile_data in all_profile_data:
-        render_static_files(**profile_data)
+                         for profile_data in all_profile_data]
+
+        render_index_file(runners_data_list)
+
+        for profile_data in all_profile_data:
+            render_static_files(**profile_data)
 
 
 if __name__ == '__main__':
