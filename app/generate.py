@@ -43,7 +43,7 @@ def write_static_file(filename, outputText):
 
 def load_data(filename):
     csv_file = open(filename, 'rb')
-    return filter(lambda x: x['First Name'] is not None and x['Channelid'] is not None and len(x['Channelid'])>0,
+    return filter(lambda x: x['First Name'] is not None, #and x['Channelid'] is not None and len(x['Channelid'])>0,
                   [row for row in csv.DictReader(csv_file, delimiter=",", quotechar='|') if row is not None])
 
 

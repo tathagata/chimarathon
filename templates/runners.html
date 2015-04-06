@@ -1,8 +1,7 @@
        <div class="container marketing">
         <div class="col-sm-7 col-sm-offset-3 col-md-7 col-md-offset-3 main">
-          <h1 class="page-header">Train. Run. Educate.</h1>
-
-          <div class="row placeholders">
+          {% include 'intro.html' %}
+          <div class="row placeholders" style="padding-top: 50px;">
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="{{fundraiser_1_url}}" class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>{{fundraiser_1}}</h4>
@@ -25,7 +24,7 @@
             </div>
           </div>
 
-          <h2 class="sub-header">Runnerboard</h2>
+
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -47,38 +46,9 @@
                       <td>10</td>
                   </tr>
               {% endfor %}
-              <!--
-                <tr>
-                  <td><a href="#"><img src="{{fundraiser_3_url}}" height=35 width=35 /></a></td>
-                  <td><a href="#">Neena Majumdar</a></td>
-                  <td>300,000</td>
-                  <td>30</td>
-                  <td>10</td>
-                </tr>
-                <tr>
-                  <td><a href="#"><img src="{{fundraiser_3_url}}" height=35 width=35 /></a></td>
-                  <td><a href="#">Neena Majumdar</a></td>
-                  <td>300,000</td>
-                  <td>30</td>
-                  <td>10</td>
-                </tr>
-		        <tr>
-                  <td><a href="#"><img src="{{fundraiser_3_url}}" height=35 width=35 /></a></td>
-                  <td><a href="#">Neena Majumdar</a></td>
-                  <td>300,000</td>
-                  <td>30</td>
-                  <td>10</td>
-                </tr>
-		        <tr>
-                  <td><a href="#"><img src="{{fundraiser_3_url}}" height=35 width=35 /></a></td>
-                  <td><a href="#">Neena Majumdar</a></td>
-                  <td>300,000</td>
-                  <td>30</td>
-                  <td>10</td>
-                </tr>
-                -->
               </tbody>
             </table>
           </div>
+            {% include 'whyasha.html' %}
         </div>
   </div><!-- /.container -->
