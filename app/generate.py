@@ -6,6 +6,7 @@ from app.defaults import templateVars
 import os
 import openpyxl
 
+
 logger = logging.getLogger()
 
 templateLoader = jinja2.FileSystemLoader(os.path.dirname(os.path.dirname(__file__))+"/templates")
@@ -87,6 +88,6 @@ def csv_to_jinja(filename):
             render_static_files(**profile_data)
 
 if __name__ == '__main__':
-    filename = "data/data.xlsx"
+    filename = "data/data_old.xlsx"
 
     csv_to_jinja(filename)
