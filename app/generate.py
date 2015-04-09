@@ -1,10 +1,10 @@
 import csv
+import logging
 
 import jinja2
 from app.defaults import templateVars
 import os
 import openpyxl
-import logging
 
 logger = logging.getLogger()
 
@@ -87,6 +87,6 @@ def csv_to_jinja(filename):
             render_static_files(**profile_data)
 
 if __name__ == '__main__':
-    filename = "data/data_old.xlsx"
+    filename = "data/data.xlsx"
 
     csv_to_jinja(filename)
