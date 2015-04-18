@@ -29,21 +29,19 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>#</th>
+                  <th>&nbsp;</th>
                   <th>Name</th>
                   <th>Fund raised</th>
-                  <th>Miles ran</th>
                   <th>Backers</th>
                 </tr>
               </thead>
               <tbody>
-              {% for name, url in runners_data_list %}
+              {% for first_name, last_name, donors_count, total_amount in runners_data_list %}
                   <tr>
-                      <td><a href="#"><img src="{{ fundraiser_3_url }}" height=35 width=35/></a></td>
-                      <td><a href="{{ url }}">{{ name }}</a></td>
-                      <td>300,000</td>
-                      <td>30</td>
-                      <td>10</td>
+                      <td><a href="#"><img src="users/{{ first_name }}{{ last_name }}/profile.jpg" height=35 width=35/></a></td>
+                      <td><a href="users/{{ first_name }}{{ last_name }}/profile.html">{{ first_name }} {{ last_name }}</a></td>
+                      <td>{{total_amount}}</td>
+                      <td>{{donors_count}}</td>
                   </tr>
               {% endfor %}
               </tbody>

@@ -1,28 +1,30 @@
 __author__ = 't'
 
 import unittest
-from app.generate import render_index_file, write_static_file
+from app.generate import render_index_page, write_templates_to_file
 from mock import patch
 
 
 class MyTestCase(unittest.TestCase):
 
-
-    @patch('app.generate.write_static_file')
-    def test_index_file_generation(self, write_static_file_fn):
-        all_data_list = ['3/25/2015 0:33:55', 'TestFirst', 'TestLast',
+    def setUp(self):
+        self.all_data_list = ['3/25/2015 0:33:55', 'TestFirst', 'TestLast',
                              'TestAddress', 'TestCity', 'TestState', 'TestZip',
                              'TestCell', '03/15/2015', 'Male','TestTshirtSize', 'TestReasonForAsha'
                              'email@id', 'channelid']
 
-        all_data_list_without_channelid = ['3/25/2015 0:33:55', 'TestFirst', 'TestLast',
+        self.all_data_list_without_channelid = ['3/25/2015 0:33:55', 'TestFirst', 'TestLast',
                              'TestAddress', 'TestCity', 'TestState', 'TestZip',
                              'TestCell', '03/15/2015', 'Male','TestTshirtSize', 'TestReasonForAsha'
                              'email@id', None]
-        runners_data_list_with_channelid = [('TestFirst TestLast', 'users/TestFirstTestLast/profile.html', 'TestChannelid')]
-        runners_data_list_without_channelid = [('TestFirst1 TestLast1', 'users/TestFirst1TestLast1/profile.html', 'TestChannelid1'),
+        self.runners_data_list_with_channelid = [('TestFirst TestLast', 'users/TestFirstTestLast/profile.html')]
+        self.runners_data_list_without_channelid = [('TestFirst1 TestLast1', 'users/TestFirst1TestLast1/profile.html', 'TestChannelid1'),
                                                ('TestFirst2 TestLast2', 'users/TestFirst1TestLast1/profile.html', None)]
 
+
+    @patch('app.generate.write_templates_to_file')
+    def test_render_index_page(self, write_static_file_fn):
+        render_index_page(self.runners_data_list_with_channelid)
 
 
     def test_render_static_files(self):
