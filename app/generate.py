@@ -1,16 +1,17 @@
 import csv
 import logging
-
-import jinja2
-from app.defaults import templateVars
 import os
+import sys
+import jinja2
+from defaults import templateVars
+
 import openpyxl
 
 
 logging.basicConfig(level=logging.DEBUG)
 
 
-templateLoader = jinja2.FileSystemLoader(os.path.dirname(os.path.dirname(__file__))+"/templates")
+templateLoader = jinja2.FileSystemLoader(os.path.dirname(os.path.dirname(__file__))+"templates")
 templateEnv = jinja2.Environment(loader=templateLoader)
 static_output_loc = 'static'
 
@@ -36,7 +37,7 @@ def render_profile_pages(**profile_data):
 
 def render_index_page(runners_data_list):
     index = templateEnv.get_template("index.html")
-
+    runners_data_list.sort(key=lambda x:x[2], reverse=True)
     outputText = index.render(runners_data_list=runners_data_list,
                               **templateVars)
     write_templates_to_file("static/index.html", outputText)
@@ -96,6 +97,6 @@ def csv_to_jinja(filename):
             render_profile_pages(**profile_data)
 
 if __name__ == '__main__':
-    filename = "data/data20150418.xlsx"
+    filename = "data/data20150426.xlsx"
 
     csv_to_jinja(filename)
