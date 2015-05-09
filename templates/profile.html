@@ -22,7 +22,7 @@
                 <h3>Backers: {{donorcount}}</h3>
 	      <p></p>
           {% if channelid != 0 %}
-	      <a href="https://www.ashanet.org/donate-new/?a=13&event_id=786&channel_id={{ channelid }}&project_id=" type="button" class="btn btn-danger">Support {{ FirstName }} </a>
+	      <a href="https://www.ashanet.org/donate-new/?a=13&event_id=786&channel_id={{ channelid }}&project_id=" type="button" class="btn btn-danger">Support {{ FirstName.split(" ")[0] }}  </a>
           {% endif %}
             </div>
           </div>
