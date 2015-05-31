@@ -37,7 +37,7 @@ def render_profile_pages(**profile_data):
 
 def render_index_page(runners_data_list):
     index = templateEnv.get_template("index.html")
-    runners_data_list.sort(key=lambda x:x[2], reverse=True)
+    runners_data_list.sort(key=lambda x:x[3], reverse=True)
     outputText = index.render(top_runners_data_list=runners_data_list[:4],
                             runners_data_list=runners_data_list, **templateVars)
     write_templates_to_file("static/index.html", outputText)
@@ -97,6 +97,6 @@ def csv_to_jinja(filename):
             render_profile_pages(**profile_data)
 
 if __name__ == '__main__':
-    filename = "data/data20150508.xlsx"
+    filename = "data/data20150529.xlsx"
 
     csv_to_jinja(filename)
