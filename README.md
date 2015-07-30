@@ -5,7 +5,7 @@ How to generate static pages
 - copy the file to data/ folder and name it as data.xlsx
 - run `python app/generate.py` from the command line
 - this will create the static pages under static directory
-- use the commands in the deploy.sh to upload the static files to the directory them to the server
+- use the commands in the deploy.sh(ask me for it) to upload the static files to the directory them to the server
 
 Things to make sure
 - each runner's firstname and lastname put together makes his directory
